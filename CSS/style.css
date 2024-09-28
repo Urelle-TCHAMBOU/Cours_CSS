@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+@font-face {
+    font-family: "DMSerif";
+    src: url(./Assets/Font/DMSerifDisplay-Regular.ttf);
+}
+body{
+    font-family: "DMSerf" , verdana;
+    background: url(./Assets/Font/Img/bg.jpg) ;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 500px;
+    width: 90%;
+    background:rgba(245, 245, 245, 0.9);
+    border-radius: 8px;
+    margin: 0 auto;
+    border: 2px solid rgba(0, 140, 255, 0.719);
+    box-shadow: 0 0 0 #81cfc6;
+    padding: 10px;
+}
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    /* La taille des polices s'exprime en REM */
+    font-size:2.5rem;
+    text-shadow:3px 3px 8px #00000087;
+    color:#0ffff1;
+    font-family: "Oswald", sans-serif;
+
+}
+h2{
+    margin: 0;  
+}
+.flexbox,
+.grid {
+    border: 2px solid skyblue;
+    border-radius: 10px;
+    padding: 10PX;
+    margin-top: 20px;
+}
+
+
+/* La flexbox permet de repartir équitablement les éléments sur une page*/
+.flexbox li{
+    list-style: none;
+    height:160px ;
+    width:160px ;
+    margin:10px ;
+    background: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flexbox ul{
+    padding: 0; 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.grid img{
+    width: 80%;
+    margin-top: 20px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+input,
+textarea{
+    margin: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 1.1rem;
+    font-family: DMSerif;
+
+}
+textarea{
+    grid-area:ta ;
+    height: 40px;
+    resize: none;
+    
+}
+#btn-submit{
+    grid-area: bt;
+    cursor: pointer;
+    background: cyan;
+    transition: 0.2s;
+}
+#btn-submit:hover{
+    background: darkblue ;
+}

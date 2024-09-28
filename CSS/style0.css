@@ -1,0 +1,47 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif; /* Police de caractères */
+    margin: 0; /* Supprime les marges par défaut */
+}
+
+/* Styles de la barre de navigation */
+.navbar {
+    background-color: #4285f4; /* Couleur de fond (bleu Google) */
+    color: white; /* Couleur du texte */
+    padding: 10px 0; /* Espacement interne */
+}
+
+.container {
+    display: flex; /* Utilise Flexbox pour l'alignement */
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Centre verticalement les éléments */
+    max-width: 1200px; /* Largeur maximale du conteneur */
+    margin: 0 auto; /* Centre le conteneur horizontalement */
+    padding: 0 20px; /* Espacement à gauche et à droite */
+}
+
+.navbar-brand {
+    font-size: 24px; /* Taille du texte pour le nom du site */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: white; /* Couleur du texte du nom du site */
+}
+
+.navbar-menu {
+    list-style-type: none; /* Supprime les puces des listes */
+    margin: 0; /* Supprime les marges par défaut */
+    padding: 0; /* Supprime le padding par défaut */
+}
+
+.navbar-menu li {
+    display: inline; /* Affiche les éléments en ligne */
+}
+
+.navbar-menu a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: white; /* Couleur des liens */
+    padding: 10px 15px; /* Espacement autour des liens */
+}
+
+.navbar-menu a:hover {
+    background-color: #357ae8; /* Couleur de fond au survol des liens */
+}

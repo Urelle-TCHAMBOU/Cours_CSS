@@ -1,45 +1,74 @@
+// Déclaration et affectation des variables en récupérant les éléments du DOM
+
 const taskInput = document.getElementById("taskInput");
 const taskList = document.getElementById("taskList");
-const tasks = JSON.parse(localStorage.getItem("tasks")) [];
+const addTaskButton = document.getElementById("addTaskButton");
 
-function addTask(){
-    const taskText = taskInput.value.trim();
-    if(taskText === "") return;
+// Chargement de toutes les taches précédentes
 
-    const task = {text: taskText};
-    tasks.push(task);
-
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-    taskInput.value ="";
-    displayTasks();
+function loadtask(){
+let tasks = JSON.parse(localStorage.getItem(tasks));
+if (tasks === null){ ;
+tasks = [];
 }
-function deleteTask (index){
-    tasks.splice(index, 1);
-    localStorage.setItem("tasks", JSON.stringly(tasks));
-    displayTasks();
-}
-function editTask (index){
-    const newTaskText = prompt("Edit the task: ", tasks[index].text);
-    if (newTaskText !== null) {
-        tasks[index].text == newTaskText;
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        displayTasks();
-
-    }
-}
-
-function displayTasks(){
-    taskList.innerHTML = "";
-
-    tasks.forEach((task, index) =>{
-        const li =document.createElement("li");
-        li.innerHTML ='
-        <span>§{task.text)</span>
-        <hr>
-        <button class ="edit-button" onclick= "editTask">
-
-            
-        ';
+else {
+    tasks.forEach(task => {
+        addTaskToDOM(task);
+        
     });
+}}
+// Ajouter une tache au DOM
+function addTaskToDOM (task){
+    const li =
+    document.createElement('li');
+    li.textContent =task;
+    taskList.appendChild(li);
+};
+
+// Ajouter une tache
+
+function addTask() {
+    const task=taskInput.value.trim();
+   if (task === ''){
+   alert('entrer une tache dans le champ de saisie');
 }
-    
+   else { addTaskToDOM(task);
+         saveTask(task);
+         taskInput.value = '';
+   }
+}
+addTaskButton.onclick = addTask;
+
+// sauvegarder la tache dans le localstorage
+function saveTask(task){
+    const tasks = JSON.parse(localStorage.getItem('tasks'))|| [];
+    tasks.push(task);
+    localStorage.setItem('tasks',JSON.stringify(tasks));
+}
+// Evènements
+
+window.onload = loadtask;
+
+// Supprimer les éléments de la liste
+
+function deleteTask(task) {
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks = tasks.filter(t => t !== task);
+    localstrorage.setItem('tasks',JSON.stringify(tasks));
+
+}
+
+// Créer le bouton de supression
+
+const deleteButton = document.createElement('button');
+deleteButton.textContent= 'supprimer';
+deleteButton.onclick = () =>{
+ deleteTask(task);
+ li.remove();
+}
+ li.appendChild(deleteButton);
+ taskList.appendChild(li);
+
+ // Mettre à jour l'affichage
+loadtask();
+ 
